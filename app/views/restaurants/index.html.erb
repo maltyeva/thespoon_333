@@ -1,0 +1,18 @@
+<h1>My Fave Restaurants</h1>
+<p>My Favorite Restaurants are</p>
+<ul>
+  <% @restaurants.each do |id, restaurant| %>
+    <li><%= restaurant[:name]%> - <%= restaurant[:address] %> (<%= restaurant[:category] %>) <%= link_to "more details", restaurant_path(id) %></li>
+  <% end %>
+</ul>
+<!--  get '/restaurants', to: "restaurants#index", as: :restaurants
+ -->
+<h5>Your query was: <%= @food_type %></h5>
+<form action="restaurants" method="get">
+  <input type="text" name="food_type" placeholder="what type of restaurant">
+  <input type="text" name="restaurant_name">
+  <input type="submit">
+</form>
+<!-- link_to "What you click on", prefix_path -->
+<%= link_to "Home", root_path %>
+<%= @name %>
